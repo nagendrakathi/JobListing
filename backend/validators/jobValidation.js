@@ -4,7 +4,7 @@ const createJobSchema = Joi.object({
   title: Joi.string().min(3).max(100).required(),
   company: Joi.string().min(2).max(100).required(),
   location: Joi.string().min(2).max(100).required(),
-  jobType: Joi.string().valid('FullTime', 'Parttime', 'Contract', 'Internship').required(),
+  jobType: Joi.string().valid('FullTime', 'Parttime', 'Contract', 'Internship').insensitive().required(),
   salaryRange: Joi.string().pattern(/^\d+-\d+$/).required(),
   description: Joi.string().min(10).required(),
   requirements: Joi.string().allow(''),
