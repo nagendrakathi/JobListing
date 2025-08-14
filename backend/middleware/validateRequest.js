@@ -3,9 +3,9 @@ const Joi = require('joi');
 const validateRequest = (schema) => {
   return (req, res, next) => {
     const options = {
-      abortEarly: false, // include all errors
-      allowUnknown: true, // ignore unknown props
-      stripUnknown: true  // remove unknown props
+      abortEarly: false, 
+      allowUnknown: true,
+      stripUnknown: true 
     };
 
     const { error, value } = schema.validate(req.body, options);
