@@ -49,23 +49,3 @@ exports.getJobs = async (req, res, next) => {
     next(error);
   }
 };
-
-// Update Job
-exports.updateJob = async (req, res, next) => {
-  try {
-    const job = await Job.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(job);
-  } catch (error) {
-    next(error);
-  }
-};
-
-// Delete Job
-exports.deleteJob = async (req, res, next) => {
-  try {
-    await Job.findByIdAndDelete(req.params.id);
-    res.json({ message: 'Job deleted successfully' });
-  } catch (error) {
-    next(error);
-  }
-};

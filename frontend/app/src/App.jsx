@@ -1,11 +1,13 @@
 import HeaderBar from "./components/HeaderBar";
 import JobGrid from "./components/JobGrid";
+import JobPage from "./pages/JobsPage";
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
       <div className="min-h-screen bg-[#f9f9f9]">
-        <HeaderBar />
-        <JobGrid />
+        <Toaster position="top-center" />
+        <JobPage />
       </div>
     </>
   );

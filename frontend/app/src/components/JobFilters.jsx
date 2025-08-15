@@ -18,8 +18,8 @@ export default function JobFilters({ filters, setFilters }) {
   }, [salaryRange]);
 
   return (
-    <div className="w-full flex justify-between items-center -mt-2 px-10 shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
-      <div className="flex justify-between items-center gap-4 bg-white border border-[#fcfcfc] px-6 py-3 rounded-[16px]  w-full">
+    <div className="w-full flex justify-between items-center -mt-2 px-10 border-b border-[#fcfcfc] shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
+      <div className="flex justify-between items-center gap-4 bg-white border-[#fcfcfc] px-6 py-3 rounded-[16px]  w-full">
         <div className="flex items-center gap-3 flex-1">
           <img src="/search.svg" alt="Search" className="w-5 h-5 opacity-70" />
           <input

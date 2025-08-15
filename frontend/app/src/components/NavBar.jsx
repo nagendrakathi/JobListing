@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import CreateJobForm from "./CreateJobForm";
 
-export default function NavBar() {
+export default function NavBar({ onJobCreated }) {
   const [createOpen, setCreateOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const handleCreateJob = (jobData) => {
     if (jobData) {
-      console.log("New job data:", jobData);
+       if (onJobCreated) onJobCreated();
     }
     setCreateOpen(false);
   };
@@ -45,7 +46,10 @@ export default function NavBar() {
       </div>
       {createOpen && (
         <Modal isOpen={createOpen} onClose={() => setCreateOpen(false)}>
-          <CreateJobForm onSubmit={handleCreateJob} />
+          <CreateJobForm
+            onSubmit={handleCreateJob}
+            onClose={() => setCreateOpen(false)}
+          />
         </Modal>
       )}
     </header>
