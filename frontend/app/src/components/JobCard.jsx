@@ -68,7 +68,7 @@ export default function JobCard({
       <div className="text-[20px] font-bold text-[#202124] mb-[10px] mt-2">
         {title}
       </div>
-      <div className="flex items-center text-[#535353] text-[16px] font-medium mb-3 gap-2">
+      <div className="flex items-center justify-between text-[#535353] text-[16px] font-medium mb-3 gap-2">
         {experience && (
           <span className="w-full flex items-center gap-1">
             <img src="/jobCardIcons/exp.svg" alt=""/>
