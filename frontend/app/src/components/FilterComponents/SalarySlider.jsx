@@ -32,13 +32,14 @@ export function SalarySlider({ salaryRange, setSalaryRange }) {
         onChange={(e, newValue) => setSalaryRange(newValue)}
         valueLabelDisplay="auto"
         valueLabelFormat={(value) => `${(value / 1000).toFixed(0)}K`}
-        min={40000}
-        max={100000}
-        step={5000}
+        min={50000}
+        max={200000}
+        step={10000}
         sx={{
           color: "black",
           height: 2,
           width: "100%",
+          ml:1,
           "& .MuiSlider-thumb": {
             width: 12,
             height: 12,
