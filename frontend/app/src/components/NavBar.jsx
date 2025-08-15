@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import CreateJobForm from "./CreateJobForm";
 
-export default function NavBar({ onJobCreated }) {
+export default function NavBar({ onJobCreated=null }) {
   const [createOpen, setCreateOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
 

@@ -15,7 +15,7 @@ export default function JobFilters({ filters, setFilters }) {
       ...filters,
       salaryRange: `${salaryRange[0]}-${salaryRange}`,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [salaryRange]);
 
   return (

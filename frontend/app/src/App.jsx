@@ -1,5 +1,3 @@
-import HeaderBar from "./components/HeaderBar";
-import JobGrid from "./components/JobGrid";
 import JobPage from "./pages/JobsPage";
 import { Toaster } from "react-hot-toast";
 function App() {
