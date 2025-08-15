@@ -2,30 +2,48 @@ import React, { useState, useEffect } from "react";
 import { SearchInput } from "./FilterComponents/SearchInput";
 import { DropdownFilter } from "./FilterComponents/DropdownFilter";
 import { SalarySlider } from "./FilterComponents/SalarySlider";
-export default function JobFilters({ filters, setFilters }) {
+
+export default function JobFilters({ filters, setFilters, setHasInteracted }) {
   const [salaryRange, setSalaryRange] = useState(
     filters && filters.salaryRange
-      ? filters.salaryRange.split("-").map((s) => parseInt(s.trim()))
-      : [50000, 80000]
+      ? filters.salaryRange.split("-").map((s) => parseInt(s.trim(), 10))
+      : [50000, 80000] // monthly UI default
   );
 
+  // Sync the local slider state to filters as a "min-max" monthly string
   useEffect(() => {
     if (!filters) return;
-    setFilters({
-      ...filters,
-      salaryRange: `${salaryRange[0]}-${salaryRange}`,
-    });
-    // eslint-disable-next-line
+    setFilters((prev) => ({
+      ...prev,
+      salaryRange: `${salaryRange}-${salaryRange[1]}`, // FIXED
+    }));
+    // mark interaction (only once)
+    if (!filters.hasInteracted) setHasInteracted(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [salaryRange]);
+
+  // Helpers for child inputs to mark interaction on first change
+  const handleFirstInteract = () => {
+    if (!filters.hasInteracted) setHasInteracted(true);
+  };
 
   return (
     <div className="w-full flex justify-between items-center mt-2 px-10">
-      <SearchInput filters={filters} setFilters={setFilters} />
+      <SearchInput
+        filters={filters}
+        setFilters={(updater) => {
+          handleFirstInteract();
+          setFilters(updater);
+        }}
+      />
       <DropdownFilter
         label="Preferred Location"
         name="location"
         value={filters.location}
-        setFilters={setFilters}
+        setFilters={(updater) => {
+          handleFirstInteract();
+          setFilters(updater);
+        }}
         filters={filters}
         options={[
           { value: "Chennai", label: "Chennai" },
@@ -40,7 +58,10 @@ export default function JobFilters({ filters, setFilters }) {
         label="Job Type"
         name="jobType"
         value={filters.jobType}
-        setFilters={setFilters}
+        setFilters={(updater) => {
+          handleFirstInteract();
+          setFilters(updater);
+        }}
         filters={filters}
         options={[
           { value: "FullTime", label: "FullTime" },
@@ -51,7 +72,13 @@ export default function JobFilters({ filters, setFilters }) {
         borderClasses="border-r-2 border-[#EAEAEA]"
       />
 
-      <SalarySlider salaryRange={salaryRange} setSalaryRange={setSalaryRange} />
+      <SalarySlider
+        salaryRange={salaryRange}
+        setSalaryRange={(value) => {
+          handleFirstInteract();
+          setSalaryRange(value);
+        }}
+      />
     </div>
   );
 }

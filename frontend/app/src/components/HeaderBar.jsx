@@ -1,22 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import NavBar from "./NavBar";
 import JobFilters from "./JobFilters";
-const HeaderBar = ({ onJobCreated }) => {
-  const [filters, setFilters] = useState({
-    title: "",
-    location: "",
-    jobType: "",
-    salaryRange: "50000-80000",
-  });
+
+const HeaderBar = ({ onJobCreated, filters, setFilters, setHasInteracted }) => {
   return (
-    <>
-      <div className="w-full h-[200px] flex flex-col items-center bg-white">
-        <div className="w-full flex justify-center">
-          <NavBar onJobCreated={onJobCreated}/>
-        </div>
-        <JobFilters filters={filters} setFilters={setFilters} />
+    <div className="w-full h-[200px] flex flex-col items-center bg-white">
+      <div className="w-full flex justify-center">
+        <NavBar onJobCreated={onJobCreated} />
       </div>
-    </>
+      <JobFilters
+        filters={filters}
+        setFilters={setFilters}
+        setHasInteracted={setHasInteracted}
+      />
+    </div>
   );
 };
 

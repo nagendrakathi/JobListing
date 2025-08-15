@@ -24,7 +24,6 @@ export default function JobCard({
   }
   
   companyLogo = getCompanyLogo(company);
-  console.log("Company Logo URL:", companyLogo);
   const maxLines = 2;
   let descriptionLines = description ? description.split("\n") : [];
 
