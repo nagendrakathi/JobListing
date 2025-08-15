@@ -88,13 +88,13 @@ export default function JobCard({
           </span>
         )}
       </div>
-      <ul className="mb-1 pl-3 list-disc font-medium text-[14px] text-gray-600 leading-[1.32]">
+      <ul className="mb-3 pl-5 list-disc font-medium text-[14px] text-gray-600 leading-[1.32]">
         {descriptionLines.map((line, idx) =>
           line.trim() ? <li key={idx}>{line}</li> : null
         )}
       </ul>
 
-      <div className="w-full flex items-center justify-center mt-auto">
+      <div className="w-full flex items-center justify-center mt-auto flex-col">
         <button
           onClick={onApply}
           className="mt-auto mb-3 w-full py-2 bg-[#00AAFF] text-white rounded-[9px] font-semibold text-[16px] shadow-sm cursor-pointer hover:bg-[#1cb3ff] transition-colors duration-200"
