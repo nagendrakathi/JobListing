@@ -12,10 +12,6 @@ export default function TextInput({
 }) {
   const [isFocused, setIsFocused] = useState(false);
 
-  // Determine border color conditionally:
-  // - Focused: black border (#000)
-  // - Not focused + has value: dark gray border (#222222)
-  // - Default: light gray (#dfdfdf)
   const borderColor = isFocused
     ? "border-1 border-[#222222]"
     : value

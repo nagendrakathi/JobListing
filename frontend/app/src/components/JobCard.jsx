@@ -1,10 +1,5 @@
 import React from "react";
 import { timeAgoString ,getCompanyLogo, formatSalaryRange} from "../utils/format";
-// Utility to format the salary range string "110000-140000" → "₹110K - ₹140K"
-
-
-// Utility to calculate time ago string from createdAt
-
 
 export default function JobCard({
   company,

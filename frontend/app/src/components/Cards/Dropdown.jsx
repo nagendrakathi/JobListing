@@ -9,7 +9,6 @@ export default function Dropdown({
   required = false,
 }) {
   const [isFocused, setIsFocused] = useState(false);
-  // Dynamic border color logic
   const borderColor = isFocused
     ? "border-1 border-[#222222]"
     : value
