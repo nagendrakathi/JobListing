@@ -71,7 +71,7 @@ export default function JobCard({
       <div className="flex items-center text-[#535353] text-[16px] font-medium mb-3 gap-3">
         {experience && (
           <span className="w-full flex items-center gap-1">
-            <img src="/jobCardIcons/exp.svg" alt="" />
+            <img src="/jobCardIcons/exp.svg" alt=""/>
             {experience}
           </span>
         )}

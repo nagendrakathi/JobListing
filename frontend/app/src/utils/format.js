@@ -42,9 +42,10 @@ export function findExp(jobType, title) {
   }
 }
 
-export const token=import.meta.env.LOGO_API;
+const LOGO_API = import.meta.env.VITE_LOGO_API;
+
 export function getCompanyLogo(name){
   if (!name) return `/companyLogos/default.svg`;
   name = name.toLowerCase().replace(/\s+/g, "-");
-  return `https://img.logo.dev/${name}.com?token=pk_YIP8vkw7SEa7ok-qbG35wg`
+  return `https://img.logo.dev/${name}.com?token=${LOGO_API}`;
 }
