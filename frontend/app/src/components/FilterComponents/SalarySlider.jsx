@@ -18,11 +18,11 @@ export function SalarySlider({ salaryRange, setSalaryRange }) {
       <div className="w-full flex flex-row items-start justify-between">
         <Typography
           variant="body2"
-          sx={{ display: "flex", alignItems: "center", gap: 1, mb: 0.5, color: "#222222", fontSize: "16px", fontWeight:550 }}
+          sx={{ display: "flex", alignItems: "center", gap: 1, mb: 0.5, color: "#222222", fontSize: "16px", fontWeight:500 }}
         >
           Salary Per Month
         </Typography>
-        <Typography variant="body2" sx={{ fontSize: "16px", color: "#222222" }} fontWeight={550}>
+        <Typography variant="body2" sx={{ fontSize: "16px", color: "#222222" }} fontWeight={500}>
           ₹{(salaryRange[0] / 1000).toFixed(0)}K – ₹{(salaryRange[1] / 1000).toFixed(0)}K
         </Typography>
       </div>
