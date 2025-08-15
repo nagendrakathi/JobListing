@@ -1,4 +1,4 @@
-const JOBS = "/jobs";
+const JOBS = "/api/jobs";
 
 export default {
   JOBS,

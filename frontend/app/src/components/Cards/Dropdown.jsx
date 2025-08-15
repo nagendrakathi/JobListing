@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Dropdown({
   label,
@@ -8,7 +8,15 @@ export default function Dropdown({
   onChange,
   required = false,
 }) {
-  const isPlaceholder = !value;
+  const [isFocused, setIsFocused] = useState(false);
+  // Dynamic border color logic
+  const borderColor = isFocused
+    ? "border-1 border-[#222222]"
+    : value
+    ? "border-1 border-[#222222]"
+    : "border-[#dfdfdf]";
+
+  const textColor = !value ? "text-[#BCBCBC]" : "text-[#222222]";
 
   return (
     <div>
@@ -19,10 +27,10 @@ export default function Dropdown({
           required={required}
           value={value}
           onChange={onChange}
-          // Tailwind dynamic classes based on placeholder status
-          className={`appearance-none w-full border border-[#dfdfdf] rounded-lg px-4 py-3 bg-white text-[16px] font-medium focus:outline-none focus:border-2 focus:border-black ${
-            isPlaceholder ? "text-[#BCBCBC]" : "text-[#222222]"
-          }`}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          className={`appearance-none w-full rounded-lg px-4 py-3 bg-white text-[16px] font-medium 
+            focus:outline-none focus:ring-0 ${borderColor} ${textColor} border`}
         >
           {options.map((opt, idx) => (
             <option
@@ -35,7 +43,6 @@ export default function Dropdown({
             </option>
           ))}
         </select>
-
         <svg
           className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
           fill="none"

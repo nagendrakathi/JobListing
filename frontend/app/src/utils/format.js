@@ -41,3 +41,10 @@ export function findExp(jobType, title) {
     experience = "Fresher";
   }
 }
+
+export const token=import.meta.env.LOGO_API;
+export function getCompanyLogo(name){
+  if (!name) return `/companyLogos/default.svg`;
+  name = name.toLowerCase().replace(/\s+/g, "-");
+  return `https://img.logo.dev/${name}.com?token=pk_YIP8vkw7SEa7ok-qbG35wg`
+}

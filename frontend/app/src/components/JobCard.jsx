@@ -1,5 +1,5 @@
 import React from "react";
-import { timeAgoString , formatSalaryRange} from "../utils/format";
+import { timeAgoString ,getCompanyLogo, formatSalaryRange} from "../utils/format";
 // Utility to format the salary range string "110000-140000" → "₹110K - ₹140K"
 
 
@@ -28,10 +28,8 @@ export default function JobCard({
     experience = "Fresher";
   }
   
-  if (company) {
-    companyLogo = `/companyLogos/${company.toLowerCase()}.svg`;
-  }
-
+  companyLogo = getCompanyLogo(company);
+  console.log("Company Logo URL:", companyLogo);
   const maxLines = 2;
   let descriptionLines = description ? description.split("\n") : [];
 
@@ -55,7 +53,7 @@ export default function JobCard({
         </span>
       </div>
       <div className="flex items-center mb-3">
-        <div className="w-15 h-15 flex justify-center items-center bg-[linear-gradient(180deg,#FEFEFD_0%,#F1F1F1_100%)] rounded-[13px]">
+        <div className="w-15 h-15 flex justify-center items-center bg-[linear-gradient(180deg,#FEFEFA_0%,#F1F1F1_100%)] rounded-[13px]">
           <img
             src={companyLogo || `/logo.svg`}
             alt="Company Logo"

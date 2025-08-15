@@ -4,6 +4,7 @@ import TextInput from "./Cards/TextInput";
 import Dropdown from "./Cards/Dropdown";
 import FormButton from "./Cards/FormButton";
 import { createJob } from "../utils/api";
+import JobDescriptionTextarea from "./Cards/JobDescriptionTextarea";
 
 export default function CreateJobForm({ onSubmit, onClose }) {
   const [form, setForm] = useState({
@@ -113,11 +114,17 @@ export default function CreateJobForm({ onSubmit, onClose }) {
                 <svg
                   width="16"
                   height="16"
-                  fill="none"
-                  stroke="#BCBCBC"
-                  strokeWidth="1.5"
+                  viewBox="0 0 16 16"
+                  fill="#222222"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M7 12L4 15M4 15L1 12M4 15V1M9 4L12 1M12 1L15 4M12 1V15" />
+                  <path
+                    d="M7 12L4 15M4 15L1 12M4 15V1M9 4L12 1M12 1L15 4M12 1V15"
+                    stroke="#BCBCBC"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               }
             />
@@ -131,11 +138,17 @@ export default function CreateJobForm({ onSubmit, onClose }) {
                 <svg
                   width="16"
                   height="16"
-                  fill="none"
-                  stroke="#BCBCBC"
-                  strokeWidth="1.5"
+                  viewBox="0 0 16 16"
+                  fill="#222222"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M7 12L4 15M4 15L1 12M4 15V1M9 4L12 1M12 1L15 4M12 1V15" />
+                  <path
+                    d="M7 12L4 15M4 15L1 12M4 15V1M9 4L12 1M12 1L15 4M12 1V15"
+                    stroke="#BCBCBC"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               }
             />
@@ -149,18 +162,12 @@ export default function CreateJobForm({ onSubmit, onClose }) {
           onChange={handleChange}
         />
       </div>
-
-      <div className="mb-5">
-        <label className="block font-bold">Job Description</label>
-        <textarea
-          name="description"
-          className="w-full border border-[#dfdfdf] rounded-lg px-4 py-3 text-[16px] min-h-[100px] placeholder:font-normal font-medium focus:outline-none focus:border-black focus:border-2 text-[#222222] placeholder:text-[#BCBCBC]"
-          placeholder="Please share a description to let the candidate know more about the job role"
-          required
-          value={form.description}
-          onChange={handleChange}
-        />
-      </div>
+      <JobDescriptionTextarea
+        name="description"
+        value={form.description}
+        onChange={handleChange}
+        required
+      />
 
       <div className="flex items-center justify-between pt-2">
         <FormButton
