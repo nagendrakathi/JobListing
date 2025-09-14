@@ -7,22 +7,22 @@ export default function JobFilters({ filters, setFilters, setHasInteracted }) {
   const [salaryRange, setSalaryRange] = useState(
     filters && filters.salaryRange
       ? filters.salaryRange.split("-").map((s) => parseInt(s.trim(), 10))
-      : [50000, 80000] // monthly UI default
+      : [50000, 100000] 
   );
 
-  // Sync the local slider state to filters as a "min-max" monthly string
+  
   useEffect(() => {
     if (!filters) return;
     setFilters((prev) => ({
       ...prev,
-      salaryRange: `${salaryRange}-${salaryRange[1]}`, // FIXED
+      salaryRange: `${salaryRange[0]}-${salaryRange[1]}`, 
     }));
-    // mark interaction (only once)
+    
     if (!filters.hasInteracted) setHasInteracted(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [salaryRange]);
 
-  // Helpers for child inputs to mark interaction on first change
+  
   const handleFirstInteract = () => {
     if (!filters.hasInteracted) setHasInteracted(true);
   };

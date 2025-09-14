@@ -11,9 +11,8 @@ export default function JobPage() {
     title: "",
     location: "",
     jobType: "",
-    // store monthly UI as string "min-max" (e.g., "50000-80000")
     salaryRange: "50000-80000",
-    hasInteracted: false, // controls whether to apply filters
+    hasInteracted: false, 
   });
 
   const loadJobs = useCallback(() => {

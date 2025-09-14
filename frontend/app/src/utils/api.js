@@ -1,7 +1,6 @@
 import axios from "./axios";
 import apiPaths from "./apiPaths";
 
-// Utility: convert monthly salary (number) to annual (number)
 const monthlyToAnnual = (m) => Number(m) * 12;
 
 export async function fetchJobs(filters = {}) {
@@ -12,17 +11,15 @@ export async function fetchJobs(filters = {}) {
     if (filters.location && filters.location.trim() !== "") params.location = filters.location.trim();
     if (filters.jobType && filters.jobType.trim() !== "") params.jobType = filters.jobType.trim();
 
-    // filters.salaryRange is a string "min-max" of MONTHLY values from the slider
     if (filters.salaryRange) {
       const [minM, maxM] = String(filters.salaryRange).split("-").map((v) => Number(v));
       if (!Number.isNaN(minM) && !Number.isNaN(maxM)) {
-        params.minSalary = monthlyToAnnual(minM); // convert to annual
+        params.minSalary = monthlyToAnnual(minM); 
         params.maxSalary = monthlyToAnnual(maxM);
       }
     }
   }
 
-  // When hasInteracted is false, params remains empty to fetch ALL jobs.
 
   const res = await axios.get(apiPaths.JOBS, { params });
   return res.data;
