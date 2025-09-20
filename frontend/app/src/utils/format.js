@@ -22,7 +22,7 @@ export function timeAgoString(createdAt) {
 
 export function formatSalaryRange(rangeStr) {
   if (!rangeStr) return "";
-  const parts = rangeStr.split("-");
+  const parts = rangeStr.split("-");  //6,00,000-12,00,000
   if (parts.length !== 2) return "";
   const maxSalary = Number(parts[1]);
   const lpaValue = Math.round(maxSalary / 100000);
