@@ -37,7 +37,7 @@ export default function JobPage() {
         setHasInteracted={(v) => setFilters((f) => ({ ...f, hasInteracted: v }))}
       />
       {loading ? (
-        <div className="text-center text-gray-500 py-10 text-lg">Please wait a moment...(I am trying to wake up the server :))</div>
+        <div className="text-center text-gray-500 py-10 text-lg">Please wait a moment...</div>
       ) : error ? (
         <div className="text-center text-red-500 py-10 text-lg">{error}</div>
       ) : (
