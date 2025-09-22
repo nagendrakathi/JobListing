@@ -4,7 +4,7 @@ import JobFilters from "./JobFilters";
 
 const HeaderBar = ({ onJobCreated, filters, setFilters, setHasInteracted }) => {
   return (
-    <div className="w-full h-[200px] flex flex-col items-center bg-white">
+    <div className="w-full h-fit flex flex-col items-center bg-white">
       <div className="w-full flex justify-center">
         <NavBar onJobCreated={onJobCreated} />
       </div>

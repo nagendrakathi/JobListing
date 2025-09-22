@@ -11,7 +11,7 @@ export default function JobPage() {
     title: "",
     location: "",
     jobType: "",
-    salaryRange: "50000-600000",
+    salaryRange: "50000-400000",
     hasInteracted: false, 
   });
 

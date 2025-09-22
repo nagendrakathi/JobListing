@@ -40,7 +40,7 @@ export default function JobCard({
   }
 
   return (
-    <div className="bg-white shadow border border-[#f0f0f0] p-5 flex flex-col relative w-full h-full rounded-2xl">
+    <div className="bg-white jobcard border border-[#f0f0f0] p-5 flex flex-col relative w-full h-full rounded-2xl">
       <div className="absolute top-6 right-5">
         <span className="bg-[#E1EEFF] text-[#1976D2] px-4 py-[6px] rounded-[13px] text-[14px] font-medium shadow text-center">
           {timeAgoString(createdAt)}
@@ -62,7 +62,7 @@ export default function JobCard({
       <div className="text-[20px] font-bold text-[#000000] mb-[10px] mt-2">
         {title}
       </div>
-      <div className="flex items-center justify-between text-[#5A5A5A] text-[16px] font-medium mb-3 gap-2">
+      <div className="flex items-center justify-between text-[#5A5A5A] text-[16px] font-medium mb-3 gap-1">
         {experience && (
           <span className="w-full flex items-center gap-1">
             <img src="/jobCardIcons/exp.svg" alt=""/>

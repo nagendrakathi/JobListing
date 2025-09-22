@@ -14,7 +14,7 @@ export default function NavBar({ onJobCreated = null }) {
   };
 
   return (
-    <header className="relative bg-white border border-[#fcfcfc] top-[2px] rounded-full w-fit h-[80px] mx-auto my-[21px] flex items-center justify-center box-border shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
+    <header className="relative bg-white border border-[#fcfcfc] top-[2px] rounded-full w-fit h-[80px] mx-auto my-[21px] flex items-center justify-center navbar-container">
       <div className=" flex items-center justify-between w-full px-[20px] ">
         <img src="/logo.svg" alt="Logo" className="w-[44px] h-[44.68px]" />
         <nav className="flex items-center justify-between gap-[20px]">

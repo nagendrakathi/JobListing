@@ -28,7 +28,7 @@ export default function JobFilters({ filters, setFilters, setHasInteracted }) {
   };
 
   return (
-    <div className="w-full flex justify-between items-center mt-2 px-10">
+    <div className="w-full flex justify-between items-center mt-2 px-10 mb-5">
       <SearchInput
         filters={filters}
         setFilters={(updater) => {
@@ -51,7 +51,7 @@ export default function JobFilters({ filters, setFilters, setHasInteracted }) {
           { value: "Bangalore", label: "Bangalore" },
           { value: "Delhi", label: "Delhi" },
         ]}
-        borderClasses="border-l-2 border-r-2 border-[#EAEAEA]"
+        borderClasses="border-l-2 border-r-2 border-[#EAEAEA] py-6"
       />
 
       <DropdownFilter
