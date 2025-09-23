@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
-      <div className="min-h-screen bg-[#f9f9f9]">
+      <div className="min-h-screen bg-[#ffffff]">
         <Toaster position="top-center" />
         <JobPage />
       </div>

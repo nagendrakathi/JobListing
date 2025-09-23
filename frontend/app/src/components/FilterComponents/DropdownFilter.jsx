@@ -4,7 +4,7 @@ export function DropdownFilter({ label, name, value, setFilters, filters, option
   const textColorClass = value ? "text-[#222222]" : "text-[#686868]";
 
   return (
-    <div className={`flex items-center gap-3 ${borderClasses} px-6 py-6 h-8 w-1/4`}>
+    <div className={`flex items-center gap-3 ${borderClasses} px-5 py-6 h-8 w-1/4`}>
       <img
         src={`/${name}.svg`}
         alt={label}

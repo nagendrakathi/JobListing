@@ -13,6 +13,8 @@ export function SalarySlider({ salaryRange, setSalaryRange }) {
         justifyContent: "center",
         gap: 1,
         padding: "0 16px",
+        // marginLeft: 8,
+        width: "1/4",
       }}
     >
       <div className="w-full flex flex-row items-start justify-between">

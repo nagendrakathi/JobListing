@@ -4,7 +4,7 @@ export function SearchInput({ filters, setFilters }) {
   const hasValue = filters.title && filters.title.trim() !== "";
 
   return (
-    <div className="flex items-center gap-3 flex-1 bg-white border-[#fcfcfc] px-6 py-3 rounded-[16px] w-full">
+    <div className="flex items-center gap-3 bg-white border-[#fcfcfc] px-6 py-3 rounded-[16px] mr-15">
       <img src="/search.svg" alt="Search" className="w-5 h-5 opacity-70" />
       <input
         type="text"

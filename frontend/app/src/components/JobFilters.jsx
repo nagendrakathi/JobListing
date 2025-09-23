@@ -10,7 +10,6 @@ export default function JobFilters({ filters, setFilters, setHasInteracted }) {
       : [50000, 100000] 
   );
 
-  
   useEffect(() => {
     if (!filters) return;
     setFilters((prev) => ({
