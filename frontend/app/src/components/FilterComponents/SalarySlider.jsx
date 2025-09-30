@@ -34,9 +34,9 @@ export function SalarySlider({ salaryRange, setSalaryRange }) {
         onChange={(e, newValue) => setSalaryRange(newValue)}
         valueLabelDisplay="auto"
         valueLabelFormat={(value) => `${(value / 1000).toFixed(0)}K`}
-        min={50000}
+        min={30000}
         max={800000}
-        step={20000}
+        step={10000}
         sx={{
           color: "black",
           height: 2,

@@ -5,9 +5,7 @@ import { SalarySlider } from "./FilterComponents/SalarySlider";
 
 export default function JobFilters({ filters, setFilters, setHasInteracted }) {
   const [salaryRange, setSalaryRange] = useState(
-    filters && filters.salaryRange
-      ? filters.salaryRange.split("-").map((s) => parseInt(s.trim(), 10))
-      : [50000, 100000] 
+     [30000, 500000] 
   );
 
   useEffect(() => {
